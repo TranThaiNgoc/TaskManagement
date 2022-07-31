@@ -14,6 +14,9 @@ use App\Http\Controllers\ProjectController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function() {
+    return redirect()->route('tasks.index');
+});
 
 Route::group(['prefix' => 'projects'], function() {
     Route::get('', [ProjectController::class, 'index'])->name('projects.index');
